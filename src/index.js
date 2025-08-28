@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')); //! normal HTML de kullandığımız container yada wrapper isimli div yerine root idsine sahip herşeyi kapsayan bir div elementi oluşturma modülü
 root.render(
   <React.StrictMode>
     <App />

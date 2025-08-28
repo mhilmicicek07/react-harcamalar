@@ -1,0 +1,33 @@
+/* p {
+    color: red;
+}
+
+h2 {
+    color: green;
+    text-align: center;
+} */
+
+/*
+p#description { /* id selector 1000 puan a eşit üzerine p elemeti seçildiği için 1001 puan olur ve aşağıdakini ezer 
+    color:purple;
+}*/
+
+/*
+#description { /* id selector 1000 puan a eşit
+    color: aqua;
+    text-align: center;
+} */
+
+/* p {
+    color: blue;
+} */
+
+.expense-card {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto 0 auto;
+}
