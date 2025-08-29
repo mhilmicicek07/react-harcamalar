@@ -1,82 +1,73 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 import Parca from "./Components/Parca";
+import YeniHarcamaForm from "./Components/YeniHarcamaForm";
 
-const expenses = [
-  {
-    title: 'Araç Bakımı', amount: 400, date: new Date(2023, 0, 14)
-  },
-  // {
-  // title: 'Araç Bakımı', amount: 400, date: "2023 01"
-  // },
-  {
-    title: 'Sigorta Ödemeleri', amount: 60, date: new Date(2023, 0, 16)
-  },
-  // {
-  // title: 'Sigorta Ödemeleri', amount: 60, date: "2023 02"
-  // },
-  {
-    title: 'Ev Alışverişi', amount: 220, date: new Date(2023, 1, 2)
-  },
-  // {
-  //   title: 'Ev Alışverişi', amount: 220, date: "2023 03"
-  // },
-  {
-    title: 'Kira Ödemesi', amount: 300, date: new Date(2023, 1, 16)
-  },
-  // {
-  //   title: 'Kira Ödemesi', amount: 300, date: "2023 04"
-  // },
-  {
-    title: 'Ödeme Başlığı', amount: 100, date: new Date(2023, 1, 29)
-  },
+const baslangicHarcamalari = [
+  { title: "Araç Bakımı", amount: 400, date: new Date(2023, 0, 14) },
+  { title: "Sigorta Ödemeleri", amount: 60, date: new Date(2023, 0, 16) },
+  { title: "Ev Alışverişi", amount: 220, date: new Date(2023, 1, 2) },
+  { title: "Kira Ödemesi", amount: 300, date: new Date(2023, 1, 16) },
+  { title: "Ödeme Başlığı", amount: 100, date: new Date(2023, 1, 29) },
 ];
 
-// function App() {
-// function App(expenses) {
 function App() {
+  const [expenses, setExpenses] = useState([]);
+
+  // LocalStorage'dan verileri al
+  useEffect(() => {
+    const kayitliHarcamalar = JSON.parse(localStorage.getItem("harcamalar"));
+    if (kayitliHarcamalar && kayitliHarcamalar.length > 0) {
+      setExpenses(
+        kayitliHarcamalar.map((h) => ({
+          ...h,
+          date: new Date(h.date), // Tarihi yeniden Date objesine çeviriyoruz
+        }))
+      );
+    } else {
+      setExpenses(baslangicHarcamalari);
+    }
+  }, []);
+
+  // Harcamaları LocalStorage’a kaydet
+  useEffect(() => {
+    localStorage.setItem("harcamalar", JSON.stringify(expenses));
+  }, [expenses]);
+
+  // Yeni harcama ekleme
+  const harcamaEkleHandler = (yeniHarcama) => {
+    setExpenses((prevExpenses) => {
+      const guncelHarcamalar = [yeniHarcama, ...prevExpenses];
+      // Güncel tarih sıralaması (En yeni → En eski)
+      return guncelHarcamalar.sort((a, b) => b.date - a.date);
+    });
+  };
+
+  // Harcama silme
+  const harcamaSilHandler = (index) => {
+    setExpenses((prevExpenses) => {
+      const guncelHarcamalar = prevExpenses.filter((_, i) => i !== index);
+      return guncelHarcamalar;
+    });
+  };
+
   return (
     <>
       <h1>Harcamalar</h1>
-      {/* <h1>Harcamalar</h1> */}
-      {/* <h1>Harcamalar</h1> */}
-      {/* <h1>Harcamalar</h1> */}
-      <Parca
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      // expense={expenses[0]}
-      />
-      <Parca
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      // expense={expenses[1]}
-      />
-      <Parca
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      // expense={expenses[2]}
-      />
-      <Parca
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      // expense={expenses[3]}
-      />
-      <Parca
-        title={expenses[4].title}
-        amount={expenses[4].amount}
-        date={expenses[4].date}
-      // expense={expenses[4]}
-      />
-      {/* <Parca /> */}
-      {/* <Parca /> */}
-      {/* <Parca /> */}
-      {/* <Parca /> */}
+      <YeniHarcamaForm onHarcamaEkle={harcamaEkleHandler} />
+      <div className="expenses-container">
+        {expenses.map((expense, index) => (
+          <Parca
+            key={index}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+            onDelete={() => harcamaSilHandler(index)}
+          />
+        ))}
+      </div>
     </>
   );
 }
-//! JSX -> HTML ve JS
 
 export default App;

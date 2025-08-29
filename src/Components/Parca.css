@@ -1,33 +1,74 @@
-/* p {
-    color: red;
+.expense-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin: 15px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-h2 {
-    color: green;
-    text-align: center;
-} */
+.expense-card:hover {
+  transform: scale(1.02);
+}
 
-/*
-p#description { /* id selector 1000 puan a eşit üzerine p elemeti seçildiği için 1001 puan olur ve aşağıdakini ezer 
-    color:purple;
-}*/
+.expense-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 80px;
+  font-weight: bold;
+}
 
-/*
-#description { /* id selector 1000 puan a eşit
-    color: aqua;
-    text-align: center;
-} */
+.expense-date .day {
+  font-size: 1.2rem;
+}
 
-/* p {
-    color: blue;
-} */
+.expense-date .month {
+  text-transform: capitalize;
+}
 
-.expense-card {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    background-color: gray;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px auto 0 auto;
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.expense-info h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #222;
+}
+
+.expense-info .amount {
+  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Silme butonu */
+.delete-button {
+  padding: 6px 10px;
+  background-color: #ff4d4f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d9363e;
 }
