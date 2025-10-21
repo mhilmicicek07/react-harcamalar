@@ -1,3 +1,71 @@
+# 📝 Harcamalar Uygulaması
+
+Bu proje, kullanıcıların **harcamalarını ekleyip yönetebileceği** basit ama işlevsel bir **React tabanlı harcama takip uygulaması**dır.  
+Uygulama, **React**, **CSS** ve tarayıcının **LocalStorage** özelliği kullanılarak geliştirilmiştir. Harcamalar, sayfa yenilense veya tarayıcı kapatılsa bile kaybolmaz.  
+
+---
+
+## 🚀 Özellikler
+
+- ✅ Yeni harcama ekleme ve listeye dinamik olarak yansıtma  
+- 🗑️ Tek bir harcamayı kolayca silme  
+- 💾 Harcamaları tarayıcı **LocalStorage**'ında kalıcı olarak saklama  
+- 🔁 Sayfa ilk yüklendiğinde harcamaların LocalStorage'dan otomatik olarak geri yüklenmesi  
+- 💻 **Modern ve Temiz Arayüz:** Kullanıcı dostu ve estetik tasarım  
+
+---
+
+## 🧩 Kullanılan Teknolojiler
+
+| Teknoloji | Rolü |
+|------------|-----------|
+| **React (Hooks: useState, useEffect)** | Uygulamanın temel dinamik yapısı ve durum yönetimi |
+| **CSS3** | Modern, responsive ve düzenli arayüz tasarımı |
+| **LocalStorage API** | Harcama verilerinin istemci tarafında kalıcı olarak saklanması |
+
+---
+
+## 📂 Proje Dosya Yapısı
+
+📁 react-harcamalar  
+├── 📄 App.js  
+├── 📄 App.css  
+├── 📁 Components  
+│   ├── 📄 Parca.js  
+│   ├── 📄 Parca.css  
+│   ├── 📄 YeniHarcamaForm.js  
+│   └── 📄 YeniHarcamaForm.css  
+└── 📄 README.md  
+
+---
+
+## ⚙️ Kurulum ve Çalıştırma
+
+Bu projeyi yerel ortamınıza klonlayın ve aşağıdaki adımları izleyin:
+
+```bash
+git clone https://github.com/mhilmicicek07/react-harcamalar.git
+cd react-harcamalar
+npm install
+npm start
+Tarayıcınızda otomatik olarak açılacaktır. 🎉
+
+🧠 Teknik Açıklama
+App.js: Ana bileşen, harcama listesini useState ile yönetir, useEffect ile LocalStorage senkronizasyonu yapar.
+
+YeniHarcamaForm.js: Kullanıcıdan veri alır, form doğrulama ve resetleme işlemleri içerir.
+
+Parca.js: Her bir harcama öğesini temsil eder, silme işlemini yönetir.
+
+CSS dosyaları: Minimal ve modern tasarımı destekler.
+
+👨‍💻 Geliştirici: Mehmet Hilmi Çiçek
+💼 Full Stack Web Developer
+📍 Geislingen an der Steige
+💬 “Basit ama tutarlı kod, karmaşık olandan her zaman üstündür.”
+
+🪪 Lisans: Bu proje açık kaynaklıdır. İsteyen herkes kodu inceleyebilir, geliştirebilir veya kişisel projelerinde kullanabilir.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
