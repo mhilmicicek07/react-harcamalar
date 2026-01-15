@@ -1,138 +1,88 @@
-# 📝 Harcamalar Uygulaması
+# 📝 Harcamalar Uygulaması | Expense Tracker | Ausgaben-Tracker
 
-Bu proje, kullanıcıların **harcamalarını ekleyip yönetebileceği** basit ama işlevsel bir **React tabanlı harcama takip uygulaması**dır.  
-Uygulama, **React**, **CSS** ve tarayıcının **LocalStorage** özelliği kullanılarak geliştirilmiştir. Harcamalar, sayfa yenilense veya tarayıcı kapatılsa bile kaybolmaz.  
-
----
-
-## 🚀 Özellikler
-
-- ✅ Yeni harcama ekleme ve listeye dinamik olarak yansıtma  
-- 🗑️ Tek bir harcamayı kolayca silme  
-- 💾 Harcamaları tarayıcı **LocalStorage**'ında kalıcı olarak saklama  
-- 🔁 Sayfa ilk yüklendiğinde harcamaların LocalStorage'dan otomatik olarak geri yüklenmesi  
-- 💻 **Modern ve Temiz Arayüz:** Kullanıcı dostu ve estetik tasarım  
+[Türkçe](#türkçe) | [English](#english) | [Deutsch](#deutsch)
 
 ---
 
-## 🧩 Kullanılan Teknolojiler
+## <a name="türkçe"></a> 🇹🇷 Türkçe
 
-| Teknoloji | Rolü |
-|------------|-----------|
-| **React (Hooks: useState, useEffect)** | Uygulamanın temel dinamik yapısı ve durum yönetimi |
-| **CSS3** | Modern, responsive ve düzenli arayüz tasarımı |
-| **LocalStorage API** | Harcama verilerinin istemci tarafında kalıcı olarak saklanması |
+Bu proje, kullanıcıların harcamalarını ekleyip yönetebileceği basit ama işlevsel bir **React tabanlı harcama takip uygulaması**dır. Uygulama, **React**, **CSS** ve tarayıcının **LocalStorage** özelliği kullanılarak geliştirilmiştir. Harcamalar, sayfa yenilense veya tarayıcı kapatılsa bile kaybolmaz.
 
----
+### 🚀 Özellikler
+- ✅ Yeni harcama ekleme ve listeye dinamik olarak yansıtma
+- 🗑️ Tek bir harcamayı kolayca silme
+- 💾 Harcamaları tarayıcı **LocalStorage**'ında kalıcı olarak saklama
+- 🔁 Sayfa ilk yüklendiğinde harcamaların LocalStorage'dan otomatik olarak geri yüklenmesi
+- 💻 **Modern ve Temiz Arayüz:** Kullanıcı dostu ve estetik tasarım
 
-## 📂 Proje Dosya Yapısı
+### 🧩 Kullanılan Teknolojiler
+- **React (Hooks: useState, useEffect)**: Uygulamanın temel dinamik yapısı
+- **CSS3**: Modern ve responsive tasarım
+- **LocalStorage API**: İstemci tarafında kalıcı veri depolama
 
-📁 react-harcamalar  
-├── 📄 App.js  
-├── 📄 App.css  
-├── 📁 Components  
-│   ├── 📄 Parca.js  
-│   ├── 📄 Parca.css  
-│   ├── 📄 YeniHarcamaForm.js  
-│   └── 📄 YeniHarcamaForm.css  
-└── 📄 README.md  
-
----
-
-## ⚙️ Kurulum ve Çalıştırma
-
-Bu projeyi yerel ortamınıza klonlayın ve aşağıdaki adımları izleyin:
-
+### ⚙️ Kurulum
 ```bash
 git clone https://github.com/mhilmicicek07/react-harcamalar.git
 cd react-harcamalar
 npm install
 npm start
-Tarayıcınızda otomatik olarak açılacaktır. 🎉
+```
 
-🧠 Teknik Açıklama
-App.js: Ana bileşen, harcama listesini useState ile yönetir, useEffect ile LocalStorage senkronizasyonu yapar.
+---
 
-YeniHarcamaForm.js: Kullanıcıdan veri alır, form doğrulama ve resetleme işlemleri içerir.
+## <a name="english"></a> 🇺🇸 English
 
-Parca.js: Her bir harcama öğesini temsil eder, silme işlemini yönetir.
+This project is a simple yet functional **React-based expense tracking application** where users can add and manage their expenditures. Developed using **React**, **CSS**, and the browser's **LocalStorage**, your data persists even after refreshing the page or closing the browser.
 
-CSS dosyaları: Minimal ve modern tasarımı destekler.
+### 🚀 Features
+- ✅ Add new expenses with dynamic list updates
+- 🗑️ Easily delete individual expenses
+- 💾 Persistent storage using browser **LocalStorage**
+- 🔁 Automatic data recovery from LocalStorage on page load
+- 💻 **Modern & Clean UI:** User-friendly and aesthetic design
 
-👨‍💻 Geliştirici: Mehmet Hilmi Çiçek
-💼 Full Stack Web Developer
-📍 Geislingen an der Steige
-💬 “Basit ama tutarlı kod, karmaşık olandan her zaman üstündür.”
+### 🧩 Technologies Used
+- **React (Hooks: useState, useEffect)**: Core logic and state management
+- **CSS3**: Modern and responsive interface design
+- **LocalStorage API**: Client-side data persistence
 
-🪪 Lisans: Bu proje açık kaynaklıdır. İsteyen herkes kodu inceleyebilir, geliştirebilir veya kişisel projelerinde kullanabilir.
+### ⚙️ Installation
+```bash
+git clone https://github.com/mhilmicicek07/react-harcamalar.git
+cd react-harcamalar
+npm install
+npm start
+```
 
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <a name="deutsch"></a> 🇩🇪 Deutsch
 
-## Available Scripts
+Dieses Projekt ist eine einfache, aber funktionale **auf React basierende Ausgaben-Tracker-App**, mit der Benutzer ihre Ausgaben hinzufügen und verwalten können. Entwickelt mit **React**, **CSS** und **LocalStorage**, bleiben Ihre Daten auch nach dem Neuladen der Seite oder dem Schließen des Browsers erhalten.
 
-In the project directory, you can run:
+### 🚀 Funktionen
+- ✅ Neue Ausgaben hinzufügen mit dynamischen Listen-Updates
+- 🗑️ Einzelne Ausgaben einfach löschen
+- 💾 Persistente Speicherung über **LocalStorage** im Browser
+- 🔁 Automatische Datenwiederherstellung beim Laden der Seite
+- 💻 **Modernes & Sauberes UI:** Benutzerfreundliches und ästhetisches Design
 
-### `npm start`
+### 🧩 Verwendete Technologien
+- **React (Hooks: useState, useEffect)**: Kernlogik und State-Management
+- **CSS3**: Modernes und responsives Interface-Design
+- **LocalStorage API**: Clientseitige Datenpersistenz
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⚙️ Installation
+```bash
+git clone https://github.com/mhilmicicek07/react-harcamalar.git
+cd react-harcamalar
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 👨‍💻 Developer
+**Mehmet Hilmi Çiçek**
+*Full Stack Web Developer*
+📍 Geislingen an der Steige, Germany
