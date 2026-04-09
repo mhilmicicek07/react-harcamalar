@@ -31,8 +31,9 @@ function YeniHarcamaForm({ onHarcamaEkle }) {
   return (
     <form onSubmit={submitHandler} className="expense-form">
       <div className="form-control">
-        <label>Başlık</label>
+        <label htmlFor="expense-title">Başlık</label>
         <input
+          id="expense-title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -41,9 +42,11 @@ function YeniHarcamaForm({ onHarcamaEkle }) {
       </div>
 
       <div className="form-control">
-        <label>Miktar</label>
+        <label htmlFor="expense-amount">Miktar</label>
         <input
+          id="expense-amount"
           type="number"
+          min="0"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           placeholder="₺"
@@ -51,8 +54,9 @@ function YeniHarcamaForm({ onHarcamaEkle }) {
       </div>
 
       <div className="form-control">
-        <label>Tarih</label>
+        <label htmlFor="expense-date">Tarih</label>
         <input
+          id="expense-date"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
