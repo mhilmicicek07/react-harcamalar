@@ -8,24 +8,42 @@ const baslangicHarcamalari = [
   { title: "Sigorta Ödemeleri", amount: 60, date: new Date(2023, 0, 16) },
   { title: "Ev Alışverişi", amount: 220, date: new Date(2023, 1, 2) },
   { title: "Kira Ödemesi", amount: 300, date: new Date(2023, 1, 16) },
-  { title: "Ödeme Başlığı", amount: 100, date: new Date(2023, 1, 29) },
+  { title: "Ödeme Başlığı", amount: 100, date: new Date(2023, 2, 1) },
 ];
+
+const sirala = (list) => [...list].sort((a, b) => b.date - a.date);
 
 function App() {
   const [expenses, setExpenses] = useState([]);
 
   // LocalStorage'dan verileri al
   useEffect(() => {
-    const kayitliHarcamalar = JSON.parse(localStorage.getItem("harcamalar"));
-    if (kayitliHarcamalar && kayitliHarcamalar.length > 0) {
-      setExpenses(
-        kayitliHarcamalar.map((h) => ({
-          ...h,
-          date: new Date(h.date), // Tarihi yeniden Date objesine çeviriyoruz
-        }))
-      );
-    } else {
-      setExpenses(baslangicHarcamalari);
+    const kayitliVeri = localStorage.getItem("harcamalar");
+
+    if (!kayitliVeri) {
+      setExpenses(sirala(baslangicHarcamalari));
+      return;
+    }
+
+    try {
+      const kayitliHarcamalar = JSON.parse(kayitliVeri);
+
+      if (Array.isArray(kayitliHarcamalar)) {
+        setExpenses(
+          sirala(
+            kayitliHarcamalar.map((h) => ({
+              ...h,
+              date: new Date(h.date), // Tarihi yeniden Date objesine çeviriyoruz
+            }))
+          )
+        );
+        return;
+      }
+
+      setExpenses(sirala(baslangicHarcamalari));
+    } catch (error) {
+      console.error("Harcamalar yüklenirken bir hata oluştu:", error);
+      setExpenses(sirala(baslangicHarcamalari));
     }
   }, []);
 
@@ -39,7 +57,7 @@ function App() {
     setExpenses((prevExpenses) => {
       const guncelHarcamalar = [yeniHarcama, ...prevExpenses];
       // Güncel tarih sıralaması (En yeni → En eski)
-      return guncelHarcamalar.sort((a, b) => b.date - a.date);
+      return sirala(guncelHarcamalar);
     });
   };
 

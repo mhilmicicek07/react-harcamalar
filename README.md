@@ -28,6 +28,12 @@ npm install
 npm start
 ```
 
+### 🧪 Testleri Çalıştırma
+```bash
+npm test
+```
+Sürekli entegrasyon ortamında etkileşimsiz çalıştırmak için: `CI=true npm test -- --watch=false`.
+
 ---
 
 ## <a name="english"></a> 🇺🇸 English
@@ -54,6 +60,12 @@ npm install
 npm start
 ```
 
+### 🧪 Running Tests
+```bash
+npm test
+```
+For non-interactive CI runs: `CI=true npm test -- --watch=false`.
+
 ---
 
 ## <a name="deutsch"></a> 🇩🇪 Deutsch
@@ -79,6 +91,12 @@ cd react-harcamalar
 npm install
 npm start
 ```
+
+### 🧪 Tests Ausführen
+```bash
+npm test
+```
+Für nicht-interaktive CI-Läufe: `CI=true npm test -- --watch=false`.
 
 ---
 
